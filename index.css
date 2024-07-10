@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+  box-sizing: border-box;
+}
+
+
+/* ------ STYLES GENERAL ------ */
+body{
+  font-family: 'Montserrat';
+  color:  #fa5641;
+  background-color: #eee;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+:is(div, body, a, ul, footer, li, input, label){
+  margin: 0;
+  padding: 0;
+}
+
+h1,h2{
+  text-wrap: balance;
+  text-align: center;
+  margin: 0;
+}
+
+h1{
+  font-weight: 800;
+}
+
+p,span{
+  text-wrap: pretty;
+  line-height: 1.8rem;
+  text-align: justify;
+  padding: 5px;
+  font-weight: 300;
+}
+
+p{
+  font-weight: 400;
+  font-size: 1.6em;
+  color: #b33c2c;
+}
+
+/* ------ HEADER SECTION ------ */
+.header{
+  background-color: #fa5641;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  container-type: inline-size;
+  container-name: header;
+}
+
+
+.header__checkbox{
+  display: none;
+}
+
+.header__nav-button{
+  font-size: 3.5rem;
+  color: #fff;
+  font-weight: 700;
+  position: absolute;
+  right: 20px;
+}
+
+.header__logo{
+  width: 90px;
+}
+
+.header__nav{
+  position: absolute;
+  display: none;
+  z-index: -1;
+  background-color: #5bcddc;
+  right: 0;
+  top: 89px;
+  height: 100vh;
+  padding: 20px;
+  box-shadow: 0 0 10px 0 #0002;
+  
+}
+
+.header__nav-list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 20vh;
+}
+
+.header__nav-item{
+  list-style: none;
+  padding: 10px;
+}
+
+.header__nav-item a{
+  color: #fff;
+  font-weight: 600;
+}
+
+.header__nav-item a:not(:is(:hover , :active)){
+  text-decoration: none;
+}
+
+
+.header__checkbox:checked ~ .header__nav{
+  display: flex;
+  
+}
+
+
+/* ------ HEADER QUIERIES ------ */
+
+@container header (min-width: 600px){
+  .header__nav-button{
+    display: none;
+  }
+
+  .header__nav{
+    display: block;
+    position: static;
+    height: auto;
+    width: auto;
+    justify-content: space-between;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .header__nav-list{
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    position: static;
+  }
+
+
+  .header.header__nav{
+    flex-direction: row;
+  }
+}
+
+
+/* ------ HEADER END ------ */
+
+
+/* ------ MAIN SECTION ------ */
+.main{
+  display: flex;
+  flex-direction: column;
+}
+
+.main__wrapper{
+  flex-grow: 1;
+} 
+
+
+.main__container-img{
+  background-image: linear-gradient(to right,#0003, #000), url("/assets/fondo_main.png");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.main__container__information{
+  padding: 40px;
+  color: #fff;
+}
+
+.main__subtitle{
+  font-weight: 600;
+  text-align: center;
+  font-style: italic;
+  display: block;
+  margin: 30px 0 0 0;
+}
+
+
+
+.main__card-container{
+  container-name: card;
+  container-type: inline-size;
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.main__information{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #99934122;
+  max-width: 1400px;/* Para que no creazca más*/
+  border-radius: 16px;
+}
+
+.main__data-container{
+  max-width: 600px;
+  padding: 12px;
+}
+
+
+
+.main__container-logo{
+  max-height: 500px;
+  display: flex;
+}
+
+
+.main__logo{
+  max-width: 100%;
+  width: 600px;
+  border-radius: 15px 0 0 15px;
+}
+
+
+
+/* ------ MAIN QUERIES ------ */
+
+@container card (max-width: 720px){
+  .main__information{
+    flex-direction: column;
+  }
+}
+
+/* ------ MAIN END ------ */
+
+
+/* FOOTER SECTION */
+
+.footer{
+  background-color: #fa5641;
+  padding: 30px;
+}
+
+
+.footer p{
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  text-wrap: pretty;
+}
+
